@@ -4,17 +4,20 @@ from dotenv import load_dotenv
 from peewee import PostgresqlDatabase
 
 
-
 load_dotenv()
+db_name = os.getenv('DB_NAME')
+db_user = os.getenv('DB_USER')
+db_password = os.getenv('DB_PASSWORD')
+db_host = os.getenv('DB_HOST')
+db_port = int(os.getenv('DB_PORT'))
 
 db = PostgresqlDatabase(
-    os.getenv('DATABASE_NAME'),
-    user=os.getenv('DATABASE_USER'),
-    password=os.getenv('DATABASE_PASSWORD'),
-    host=os.getenv('DATABASE_HOST'),
-    port=int(os.getenv('DATABASE_PORT'))
+    db_name,
+    user=db_user,
+    password=db_password,
+    host=db_host,
+    port=db_port
 )
-
 class BaseModel(Model):
     class Meta:
         database = db
