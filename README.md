@@ -28,7 +28,6 @@
     ```bash
     docker-compose exec app python populate_db.py
     ```
-Certainly! You can use Markdown to create a gray background for the section by using blockquotes. Here is the updated README file with the requested formatting:
 
 ## ФУНКЦІОНАЛЬНІСТЬ API 
 
